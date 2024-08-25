@@ -16,6 +16,7 @@ app.use(function(req, res, next) {
 });
 
 app.post('/bfhl', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     const { data } = req.body;
 
     // Initialize arrays
@@ -56,6 +57,7 @@ app.post('/bfhl', (req, res) => {
 });
 
 app.get('/bfhl', (req, res) => {
+    res.set('Access-Control-Allow-Origin', '*');
     const response = {
         operation_code: 1
     };
