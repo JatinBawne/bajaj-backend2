@@ -8,6 +8,13 @@ app.use(cors({
     origin: '*', // Allow only your frontend domain
     methods: ['GET', 'POST'], // Allow only GET and POST requests
   }));
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.post('/bfhl', (req, res) => {
     const { data } = req.body;
 
